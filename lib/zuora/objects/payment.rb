@@ -8,7 +8,7 @@ module Zuora::Objects
 
     validates_length_of :accounting_code, :maximum => 100, :allow_nil => true
     validates_numericality_of :amount
-    validates_numericality_of :applied_credit_balance_amount
+    validates_numericality_of :credit_balance_adjustment_amount
     validates_numericality_of :applied_invoice_amount
     validates_length_of :auth_transaction_id, :maximum => 50, :allow_nil => true
     validates_length_of :bank_identification_number, :maximum => 6, :allow_nil => true
@@ -36,7 +36,7 @@ module Zuora::Objects
     define_attributes do
       read_only :bank_identification_number, :created_by_id, :created_date, :gateway_response,
         :gateway_response_code, :updated_by_id, :updated_date
-        write_only :applied_invoice_amount,:gateway_option_data, :invoice_id, :invoice_number,:applied_credit_balance_amount
+        write_only :applied_invoice_amount,:gateway_option_data, :invoice_id, :invoice_number, :credit_balance_adjustment_amount
     end
   end
 end
